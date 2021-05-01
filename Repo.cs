@@ -12,6 +12,7 @@ namespace LinearRegression
         public double X { get; set; }
         public double Y { get; set; }
 
+        // Calculation methods for single sumation variables.
         public static double sumX()
         {
             double sum = 0.0;
@@ -56,6 +57,8 @@ namespace LinearRegression
             return N;
         }
 
+        // Torn between this format and the one used in getBeta, this is easier to read so some
+        // but getBeta is more efficient.
         public static double getAlpha()
         {
             double alpha = 0.0;
@@ -85,6 +88,8 @@ namespace LinearRegression
             Console.WriteLine($"Y = {A} + {B} * X");
         }
 
+        // The calling method. Starts the calling of the all the other functions needed to perform linear regression.
+        
         public static void doFormula()
         {
             Console.WriteLine("The forumula for the inputed data is:");
@@ -98,6 +103,7 @@ namespace LinearRegression
             Console.WriteLine($"For X of {pred} Y is {result}.");
         }
 
+        // Any points the user creates are added to the list for use in the calculation methods.
         public Point() 
         {
             this.Name = "Unknown";
