@@ -95,12 +95,27 @@ namespace LinearRegression
             Console.WriteLine("The forumula for the inputed data is:");
             getFormula();
             Console.WriteLine("Please enter a value for X as a predictor:");
-            double pred = double.Parse(Console.ReadLine());
+            double pred = getUserPred();
             double A = getAlpha();
             double B = getBeta();
             double result = pred * B + A;
             result = Math.Round(result, 2);
             Console.WriteLine($"For X of {pred} Y is {result}.");
+        }
+
+        public static double getUserPred()
+        {
+            double input = 0.0;
+            try
+            {
+                input = double.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong, try again.");
+                return getUserPred();
+            }
+            return input;
         }
 
         // Any points the user creates are added to the list for use in the calculation methods.
